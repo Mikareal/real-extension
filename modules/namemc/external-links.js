@@ -5,16 +5,18 @@ export function profileLinks(username) {
   return [
     ["capes.me", `https://capes.me/capes?user=${name}`],
     ["LABY", `https://laby.net/@${name}`],
-    ["Livz", `https://livzmc.net/user/${name}`],
-    ["25Karma", `https://25karma.xyz/player/${name}`],
+    ["Livz", `https://livzmc.net/user/${name}`],  
     ["Crafty", `https://crafty.gg/@${name}`],
     ["mcindex", `https://mcindex.gg/player/${name}`],
     ["Badlion", `https://www.badlion.net/profile/minecraft/${name}`],
     ["SkinMC", `https://skinmc.net/profile/${name}`],
     ["mcprofiles", `https://mcprofiles.me/player/${name}`],
     ["MinecraftUUID", `https://minecraftuuid.com/player/${name}`],
+    ["Amplitudes", `https://names.amplitudes.me/${name}`],
     ["Plancke", `https://plancke.io/hypixel/player/stats/${name}`],
-    ["minecraft-statistic", `https://minecraft-statistic.net/en/player/${name}.html`]
+    ["25Karma", `https://25karma.xyz/player/${name}`],
+    ["minecraft-statistic", `https://minecraft-statistic.net/en/player/${name}.html`],
+    
   ];
 }
 

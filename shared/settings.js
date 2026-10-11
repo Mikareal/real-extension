@@ -1,8 +1,8 @@
 // Keep the existing Riot storage key so saved choices still work.
 export const moduleFeatures = {
-  namemc: ["locatorDot", "externalSites", "hytaleName"],
-  riot2fa: ["ticketTextFix", "twoFactorFix"],
-  labymod: []
+  namemc: ["locatorDot", "externalSites", "hytaleName", "nameHistory"],
+  riot2fa: ["ticketTextFix"],
+  labymod: ["elytraCapeFix"]
 };
 
 export function normalizeSettings(saved = {}) {
