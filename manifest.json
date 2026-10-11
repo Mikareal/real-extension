@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "real-extension",
+  "version": "0.1.0",
+  "description": "A modular collection of browser quality-of-life tweaks.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": ["https://api.hytale.tools/*", "https://playerdb.co/*"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": {
+    "default_title": "Tweak Toolkit",
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.namemc.com/profile/*"],
+      "js": ["modules/namemc/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "shared/settings.js",
+        "shared/module-runner.js",
+        "modules/namemc/page.js",
+        "modules/namemc/index.js",
+        "modules/namemc/locator-dot.js",
+        "modules/namemc/external-links.js",
+        "modules/namemc/hytale-name.js",
+        "modules/namemc/Locator_bar_dot.png"
+      ],
+      "matches": ["https://*.namemc.com/*"]
+    }
+  ]
+}
