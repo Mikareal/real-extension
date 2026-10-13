@@ -16,7 +16,7 @@ export function readProfile(document, pathname) {
 }
 
 export function start() {
-  const imageURL = chrome.runtime.getURL("modules/namemc/Locator_bar_dot.png");
+  const imageURL = chrome.runtime.getURL("modules/namemc/assets/locator-bar-dot.png");
   const dot = document.createElement("span");
   dot.setAttribute("role", "img");
   dot.style.cssText = "display:inline-block;width:0.6em;height:0.6em;margin-left:0.15em;vertical-align:0.1em;image-rendering:pixelated;";

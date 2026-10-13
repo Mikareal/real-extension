@@ -1,5 +1,5 @@
-import { checkHytaleName } from "./shared/hytale-check.js";
-import { loadCraftyHistory, loadAmplitudesHistory } from "./shared/name-history.js";
+import { checkHytaleName } from "./modules/namemc/api/hytale.js";
+import { loadCraftyHistory, loadAmplitudesHistory } from "./modules/namemc/api/name-history.js";
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message?.type === "loadNameHistory" && ["crafty", "amplitudes"].includes(message.source)) {

@@ -33,7 +33,6 @@ export function start() {
     if (focused) textarea.focus();
 
     function onInput() {
-      // Riot uses single-line inputs; keep the full text and normalize pasted newlines.
       setValue.call(input, textarea.value.replace(/[\r\n]+/g, " "));
       input.dispatchEvent(new Event("input", { bubbles: true }));
       input.dispatchEvent(new Event("change", { bubbles: true }));

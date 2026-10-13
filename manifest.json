@@ -3,16 +3,26 @@
   "name": "real-extension",
   "version": "0.1.0",
   "description": "A modular collection of browser quality-of-life tweaks.",
+  "icons": {
+    "400": "logo.png"
+  },
   "permissions": [
     "storage"
   ],
   "host_permissions": ["https://api.hytale.tools/*", "https://playerdb.co/*", "https://api.crafty.gg/api/v2/players/*", "https://names.amplitudes.me/api/history/*"],
   "background": { "service_worker": "background.js", "type": "module" },
   "action": {
+    "default_icon": "logo.png",
     "default_title": "Tweak Toolkit",
     "default_popup": "popup/popup.html"
   },
   "content_scripts": [
+    {
+      "matches": ["https://*.namemc.com/profile/*"],
+      "js": ["modules/namemc/better-skin-viewer-page.js"],
+      "world": "MAIN",
+      "run_at": "document_start"
+    },
     {
       "matches": ["https://*.namemc.com/profile/*"],
       "js": ["modules/namemc/content.js"],
@@ -46,7 +56,8 @@
         "modules/namemc/external-links.js",
         "modules/namemc/hytale-name.js",
         "modules/namemc/name-history.js",
-        "modules/namemc/Locator_bar_dot.png"
+        "modules/namemc/better-skin-viewer.js",
+        "modules/namemc/assets/locator-bar-dot.png"
       ],
       "matches": ["https://*.namemc.com/*"]
     },

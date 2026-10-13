@@ -1,6 +1,5 @@
-// Keep the existing Riot storage key so saved choices still work.
 export const moduleFeatures = {
-  namemc: ["locatorDot", "externalSites", "hytaleName", "nameHistory"],
+  namemc: ["locatorDot", "externalSites", "hytaleName", "nameHistory", "betterSkinViewer"],
   riot2fa: ["ticketTextFix"],
   labymod: ["elytraCapeFix"]
 };

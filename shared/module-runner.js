@@ -1,6 +1,5 @@
 import { isFeatureEnabled } from "./settings.js";
 
-// Each feature provides start(), which returns a function to undo its changes.
 export function createModuleRunner(module, features) {
   const running = new Map();
 

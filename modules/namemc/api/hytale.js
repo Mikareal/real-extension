@@ -14,7 +14,7 @@ export async function checkHytaleName(username, fetchRequest = fetch) {
       return { status: result.status };
     }
   } catch {
-    // Try PlayerDB when the primary check fails.
+  //Playerdb if fail
   }
   try {
     const response = await fetchRequest(`https://playerdb.co/api/player/hytale/${name}`, {
@@ -28,9 +28,7 @@ export async function checkHytaleName(username, fetchRequest = fetch) {
         typeof player?.username === "string" && player.username.toLowerCase() === username.toLowerCase()) {
       return { status: "taken" };
     }
-    // A missing player does not rule out a reserved or prohibited name.
   } catch {
-    // Neither API could confirm the name's availability.
   }
   return { status: "unknown" };
 }
