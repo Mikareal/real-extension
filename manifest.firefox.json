@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "real-extension Riot, Namemc, Laby QoL",
+  "version": "1.0.0",
+  "description": "A modular collection of browser quality-of-life tweaks.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://api.hytale.tools/*",
+    "https://playerdb.co/*",
+    "https://api.crafty.gg/api/v2/players/*",
+    "https://names.amplitudes.me/api/history/*"
+  ],
+  "background": { "scripts": ["background.js"], "type": "module" },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Tweak Toolkit",
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    { "matches": ["https://*.namemc.com/profile/*"], "js": ["modules/namemc/better-skin-viewer-page.js"], "world": "MAIN", "run_at": "document_start" },
+    { "matches": ["https://*.namemc.com/profile/*"], "js": ["modules/namemc/content.js"], "run_at": "document_idle" },
+    { "matches": ["https://support.riotgames.com/*/riot/tickets/submit*"], "js": ["modules/riot/content.js"], "run_at": "document_idle" },
+    { "matches": ["https://laby.net/*", "https://www.laby.net/*"], "js": ["modules/laby/cape-fix.js"], "world": "MAIN", "run_at": "document_start" },
+    { "matches": ["https://laby.net/*", "https://www.laby.net/*"], "js": ["modules/laby/content.js"], "run_at": "document_idle" }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["shared/settings.js", "shared/module-runner.js", "modules/namemc/page.js", "modules/namemc/index.js", "modules/namemc/locator-dot.js", "modules/namemc/external-links.js", "modules/namemc/hytale-name.js", "modules/namemc/name-history.js", "modules/namemc/better-skin-viewer.js", "modules/namemc/assets/locator-bar-dot.png"],
+      "matches": ["https://*.namemc.com/*"]
+    },
+    {
+      "resources": ["shared/settings.js", "shared/module-runner.js", "modules/riot/page.js", "modules/riot/ticket-text.js"],
+      "matches": ["https://support.riotgames.com/*"]
+    },
+    {
+      "resources": ["shared/settings.js", "modules/laby/page.js"],
+      "matches": ["https://laby.net/*", "https://www.laby.net/*"]
+    }
+  ]
+}
